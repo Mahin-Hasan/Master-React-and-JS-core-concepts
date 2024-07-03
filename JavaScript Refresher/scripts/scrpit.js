@@ -71,3 +71,23 @@ function random(){
         console.log('anonymous function');
     }
 }
+
+//dom 
+const button = document.getElementById('button');
+// button.addEventListener('click', () => {
+//     console.log('clicked');
+// });
+button.addEventListener('click', hello);
+
+//premitive[string , number , boolean] vs reference[obj,arr] 
+
+let firstObj = ["ruby", "C#"]
+let secondObj = ["Typescript", "C++"]
+
+secondObj = firstObj;
+console.log(firstObj);
+console.log(secondObj);
+firstObj.push('solidity')
+console.log(firstObj);
+console.log(secondObj);
+
