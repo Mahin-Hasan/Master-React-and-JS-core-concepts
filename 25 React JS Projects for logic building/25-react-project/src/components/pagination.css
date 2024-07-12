@@ -1,0 +1,50 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.pagination-btn {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: lightseagreen;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+}
+.pagination-btn-active{
+    padding: 10px;
+    margin: 0 5px;
+    background-color: rgb(9, 87, 83);
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+}
+.pagination-btn:disabled {
+    background-color: beige;
+    color: black;
+    cursor: not-allowed;
+}
+
+.list-items{
+    list-style: none;
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    padding: 0;
+    margin: 20px auto;
+    grid-template-columns: repeat(3,1fr);
+}
+.list-items li{
+    padding: 20px;
+    background-color: lemonchiffon;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 15px;
+    color: darkcyan
+}
