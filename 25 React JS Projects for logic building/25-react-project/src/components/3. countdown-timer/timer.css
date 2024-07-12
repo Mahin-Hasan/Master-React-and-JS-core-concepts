@@ -1,0 +1,27 @@
+.countdown-timer-container {
+    margin: 20px 0;
+}
+
+.timer p {
+    font-size: 30px;
+    font-weight: bold;
+    color: darksalmon;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.timer-buttons button {
+    padding: 10px 16px;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: lemonchiffon;
+    cursor: pointer;
+}
