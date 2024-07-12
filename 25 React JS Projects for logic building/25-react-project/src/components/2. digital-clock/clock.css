@@ -1,0 +1,13 @@
+.digital-clock{
+    margin-top: 30px;
+}
+.time{
+    margin-top: 10px;
+    font-size: 30px;
+    color: crimson;
+}
+.date{
+    font-size: 25px;
+    margin-top: 10px;
+    color: darkorange;
+}
