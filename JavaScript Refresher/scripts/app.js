@@ -51,12 +51,28 @@ const output = numbers.reduce((total, currVal) => total + currVal, 0); // here t
 console.log(output);
 // forEach for of for in
 
+
+const dynamicEntry = "popularity";
+
 const language ={
     name: "JavaScript",
     year: 1995,
     creator:"Brendan Eich"
 }
+//es6 style
+const language2 ={
+    name: "JavaScript",
+    year: 1995,
+    creator:"Brendan Eich",
+    dynamicEntry
+}
 
 for (key in language){
     console.log(language[key]);
 }
+
+//making a dynamic entry
+
+language[dynamicEntry]= "90%"
+console.log(language);
+console.log(language2);
