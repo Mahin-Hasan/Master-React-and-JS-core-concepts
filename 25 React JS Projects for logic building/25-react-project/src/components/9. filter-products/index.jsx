@@ -52,6 +52,8 @@ const FilterProducts = () => {
 
 
     console.log(uniqueCategories, "uniqueCategories");
+    console.log(currentSelectedCategory, "currentSelectedCategory");
+    
 
     if (loading) {
         return <h3>Fetching the Products!!! Please Wait</h3>
@@ -61,8 +63,12 @@ const FilterProducts = () => {
         <div className="filter-products-container">
             <h2>Filter Products by Category</h2>
             <div className="filter-categories-container">
-                {uniqueCategories.map((uniqueCategories) => (<button
-                    onClick={() => setCurrentSelectedCategory(currentSelectedCategory !== '' ? '' : uniqueCategories)}
+                {uniqueCategories.map((uniqueCategories,idx) => (<button key={idx}
+                    onClick={() =>
+                        setCurrentSelectedCategory(
+                            currentSelectedCategory !== '' && 
+                            currentSelectedCategory === uniqueCategories ? '' : uniqueCategories)}
+                className={`${currentSelectedCategory === uniqueCategories ? 'active' : ''}`}
                 >
                     {uniqueCategories}
                 </button>))}

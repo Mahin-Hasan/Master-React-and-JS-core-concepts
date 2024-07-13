@@ -8,7 +8,6 @@ const CurrencyConverter = () => {
     const [toCurrency, setToCurrency] = useState('BDT');
     const [exchangeRate, setExchangeRate] = useState();
     const [convertedAmount, setConvertedAmount] = useState();
-console.log(fromCurrency);
     async function fetchExchangeRate() {
         const apiResponse = await fetch(`https://open.er-api.com/v6/latest/${fromCurrency}`, {
             method: 'GET'
