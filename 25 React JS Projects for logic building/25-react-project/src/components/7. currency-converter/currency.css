@@ -1,0 +1,38 @@
+.currency-converter{
+    min-width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: #fcffdd;
+    padding: 25px;
+    border-radius: 8px;
+}
+.currency-converter h2{
+   margin-bottom: 20px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.input-container input{
+    width: 70%;
+    padding: 6px;
+    border: none;
+    background-color: lightseagreen;
+    color: blanchedalmond;
+    font-size: larger;
+    border-radius: 8px;
+    outline: none;
+}
+.input-container select{
+    width: 18%;
+    padding: 6px;
+    border: none;
+    background-color: cadetblue;
+    color: blanchedalmond;
+    font-size: larger;
+    border-radius: 8px;
+    outline: none;
+}
