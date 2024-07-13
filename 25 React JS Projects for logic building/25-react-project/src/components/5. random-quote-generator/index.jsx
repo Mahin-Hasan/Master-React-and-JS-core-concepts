@@ -21,7 +21,6 @@ const RandomQuoteGenerator = () => {
             // console.log(result[getRandomIndex()]?.text);
             // const output = result[getRandomIndex()]?.text;
             const output = result[getRandomIndex()];
-            console.log(output);
 
             if (output) {
                 setLoading(false)

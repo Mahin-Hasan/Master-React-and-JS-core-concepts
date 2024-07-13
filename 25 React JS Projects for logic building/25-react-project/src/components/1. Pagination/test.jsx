@@ -20,7 +20,7 @@ const PaginationTest = () => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentListOfItems = fakeData.slice(indexOfFirstItem,indexOfLastItem)
 
-    console.log(currentListOfItems);
+    // console.log(currentListOfItems);
 
     return (
         <div>
