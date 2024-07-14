@@ -7,7 +7,8 @@ import StepProgressBarTest from './components/4. step-progress-bar/test'
 import RandomQuoteGenerator from './components/5. random-quote-generator'
 import TooltipTest from './components/6. tooltip/test'
 import CurrencyConverter from './components/7. currency-converter'
-import FilterProducts from './components/9. filter-products'
+import FilterProducts from './components/8. filter-products'
+import TipCalculator from './components/9. tip-calculator'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <TooltipTest/>
         <CurrencyConverter/>
         <FilterProducts/>
+        <TipCalculator/>
       </div>
     </>
   )
