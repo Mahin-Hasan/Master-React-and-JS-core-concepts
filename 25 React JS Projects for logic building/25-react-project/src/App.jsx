@@ -1,6 +1,7 @@
 
 import './App.css'
 import PaginationTest from './components/1. Pagination/test'
+import MusicPlayer from './components/10. music-player'
 import DigitalClock from './components/2. digital-clock'
 import CountdownTimerTest from './components/3. countdown-timer/test'
 import StepProgressBarTest from './components/4. step-progress-bar/test'
@@ -25,6 +26,7 @@ function App() {
         <CurrencyConverter/>
         <FilterProducts/>
         <TipCalculator/>
+        <MusicPlayer/>
       </div>
     </>
   )

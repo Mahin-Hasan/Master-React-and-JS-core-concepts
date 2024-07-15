@@ -1,0 +1,41 @@
+.music-player {
+    min-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.music-player img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+    background-color: bisque;
+}
+
+/* .progress {
+    height: 100%;
+} */
+
+.track-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-controls button{
+    padding: 7px;
+    background-color: rgb(9, 110, 210);
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 10px;
+}
