@@ -7,7 +7,7 @@ const FilterProducts = () => {
     const [currentSelectedCategory, setCurrentSelectedCategory] = useState('')
     const [filteredItems, setFilteredItems] = useState([])
 
-    console.log(currentSelectedCategory);
+    // console.log(currentSelectedCategory);
     async function fetchProducts() {
         try {
             setLoading(true)
@@ -51,8 +51,8 @@ const FilterProducts = () => {
             []
 
 
-    console.log(uniqueCategories, "uniqueCategories");
-    console.log(currentSelectedCategory, "currentSelectedCategory");
+    // console.log(uniqueCategories, "uniqueCategories");
+    // console.log(currentSelectedCategory, "currentSelectedCategory");
     
 
     if (loading) {
