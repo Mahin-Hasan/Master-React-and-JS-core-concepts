@@ -7,7 +7,7 @@ const ButtonRippleEffect = () => {
   const [coordinates, setCoordinates] = useState({ x: -1, y: -1 });
 
   function handleRippleEffect(e) {
-    console.log(e.target.getBoundingClientRect(), e.clientX, e.clientY);
+    // console.log(e.target.getBoundingClientRect(), e.clientX, e.clientY);
 
     const rect = e.target.getBoundingClientRect();
     setCoordinates({
@@ -28,7 +28,7 @@ const ButtonRippleEffect = () => {
     if (!isRippleEffect) setCoordinates({ x: -1, y: -1 });
   }, [isRippleEffect]);
 
-  console.log(coordinates, isRippleEffect);
+//   console.log(coordinates, isRippleEffect);
 
   return (
     <div className="ripple-effect-container">
