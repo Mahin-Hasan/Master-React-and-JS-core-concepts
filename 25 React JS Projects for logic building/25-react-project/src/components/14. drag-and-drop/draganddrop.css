@@ -32,7 +32,7 @@
 }
 
 .todo-list-wrapper{
-    height: 500px;
+    height: 380px;
     overflow: auto;
     display: flex;
     flex-direction: column;

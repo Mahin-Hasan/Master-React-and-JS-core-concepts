@@ -32,7 +32,7 @@ const DragAndDropFeature = () => {
   useEffect(() => {
     fetchListOfTodos();
   }, []);
-  console.log(todos);
+//   console.log(todos);
 
   function onDragStart(event, id) {
     event.dataTransfer.setData("id", id);
