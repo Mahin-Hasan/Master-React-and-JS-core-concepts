@@ -1,4 +1,6 @@
 import { useState } from "react";
+import './form.css'
+
 
 const FormValidation = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const FormValidation = () => {
     email: "",
     password: "",
   });
+
+  //validation using onchange
 
   function handleFormChange(event) {
     const { name, value } = event.target; //destructuring
@@ -28,15 +32,31 @@ const FormValidation = () => {
   }
   function validateInput(getName, getValue) {
     switch (getName) {
-      case "userName":
+      case "username":
         setErrors((prevErrors) => ({
           ...prevErrors,
-          username: getName.length < 3 ? 'UserName must be greater than 3 character': '',
+          username:
+            getValue.length < 3
+              ? "UserName must be greater than 3 character"
+              : "",
         }));
         break;
       case "email":
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(
+            getValue
+          )
+            ? ""
+            : "Invalid Email Address",
+        }));
         break;
       case "password":
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          password:
+            getValue.length < 5 ? "Password must be at least 5 character" : "",
+        }));
         break;
 
       default:
@@ -44,12 +64,38 @@ const FormValidation = () => {
     }
   }
 
+  //validation using form submit
+  function handleFromSubmit(event) {
+    event.preventDefault();
+
+    const validateErrors = {};
+
+    Object.keys(formData).forEach((dataItem) => {
+      validateInput(dataItem, formData[dataItem]); // passing form key and value
+      if (errors[dataItem]) {
+        //checking if errors os name,email and pass exist than setting the same in the validateErrors object
+        validateErrors[dataItem] = errors[dataItem];
+      }
+    });
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      ...validateErrors,
+    }));
+
+    if (Object.values(validateErrors).every((error) => error === "")) {
+      //perform form submission logic
+    } else {
+      console.log("Error is present but fix this issue");
+    }
+  }
+
   console.log(formData);
 
   return (
-    <div>
+    <div className="form-validation-container">
       <h2>Simple Form Validation</h2>
-      <form>
+      <form onSubmit={handleFromSubmit}>
         <div className="input-wrapper">
           <label htmlFor="username">User Name</label>
           <input

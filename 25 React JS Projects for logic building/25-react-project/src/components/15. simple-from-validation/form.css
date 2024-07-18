@@ -1,0 +1,54 @@
+.form-validation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-validation-container h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.form-validation-container form {
+    background-color: rgb(73, 169, 201);
+  width: 800px;
+  padding: 20px;
+  border: 1px solid darkblue;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.input-wrapper label {
+  flex: 1;
+}
+
+.input-wrapper input {
+  flex: 2;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.input-wrapper span {
+  flex: 1;
+  color: crimson;
+  font-weight: bold;
+}
+.form-validation-container button {
+  padding: 8px;
+  background-color: rgb(9, 110, 210);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: antiquewhite;
+  font-weight: bold;
+  margin: 10px 0;
+  border-radius: 6px;
+}
