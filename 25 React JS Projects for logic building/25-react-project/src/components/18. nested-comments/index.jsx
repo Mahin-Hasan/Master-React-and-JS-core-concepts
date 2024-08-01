@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Comment from "./Comment";
+import "./nested-comments.css"
 
 const NestedComments = () => {
   const [inputValue, setInputValue] = useState("");
@@ -32,17 +33,68 @@ const NestedComments = () => {
       ],
     },
   ]);
+
+  function handleAddReply(getCurentParentId, getCurentReply) {
+    // console.log(getCurentReply, getCurentParentId);
+    let updatedComments = [...comments];
+    handleAddNewComments(updatedComments, getCurentParentId, getCurentReply);
+    setComments(updatedComments);
+  }
+
+  function newComment(text) {
+    return {
+      id: new Date().getTime(),
+      title: text,
+      children: [],
+    };
+  }
+
+  function handleAddNewComments(
+    updatedComments,
+    getCurentParentId,
+    getCurentReply
+  ) {
+    for (let i = 0; i < updatedComments.length; i++) {
+      let comment = updatedComments[i];
+      if (comment.id === getCurentParentId) {
+        comment.children.unshift(newComment(getCurentReply));
+      }
+    }
+    for (let i = 0; i < updatedComments.length; i++) {
+      let comment = updatedComments[i];
+      handleAddNewComments(comment.children, getCurentParentId, getCurentReply);
+    }
+  }
+
+  console.log(comments);
   return (
     <div className="nested-comments-container">
       <h2>Nested Comments</h2>
       <div className="comment-wrapper">
-        <textarea rows={"5"} cols={"100"} value={inputValue} />
+        <textarea
+          onChange={(e) => setInputValue(e.target.value)}
+          rows={"5"}
+          cols={"100"}
+          value={inputValue}
+        />
         <br />
-        <button>Add Comment</button>
+        <button
+          onClick={() => {
+            setComments([newComment(inputValue), ...comments]);
+            setInputValue("");
+          }}
+          className="add-comment-btn"
+        >
+          Add Comment
+        </button>
       </div>
       <ul>
         {comments.map((comment) => (
-          <Comment key={comment.id} comment={comment} />
+          <Comment
+            handleAddReply={handleAddReply}
+            key={comment.id}
+            comment={comment}
+          />
         ))}
       </ul>
     </div>

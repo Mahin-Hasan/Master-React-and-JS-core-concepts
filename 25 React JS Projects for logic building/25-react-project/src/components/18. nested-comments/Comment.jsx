@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Comment = ({ comment, key }) => {
+const Comment = ({ comment, key, handleAddReply }) => {
   const [reply, setReply] = useState("");
   const [showReplyCommentBox, setShowReplyCommentBox] = useState(false);
 
   return (
     <li key={key}>
-      {comment.title}
+      <span>{comment.title}</span>
       {!showReplyCommentBox ? (
         <button onClick={() => setShowReplyCommentBox(true)}>Add Reply</button>
       ) : null}
@@ -15,12 +15,20 @@ const Comment = ({ comment, key }) => {
           <textarea
             rows={"2"}
             cols={"20"}
-            onChange={(e) => setReply(e.target.valuel)}
+            onChange={(e) => setReply(e.target.value)}
             value={reply}
           />
           <br />
           <div className="reply-buttons-container">
-            <button>Submit</button>
+            <button
+              onClick={() => {
+                handleAddReply(comment.id, reply);
+                setShowReplyCommentBox(false);
+                setReply("");
+              }}
+            >
+              Submit
+            </button>
             <button
               onClick={() => {
                 setShowReplyCommentBox(false);
@@ -36,7 +44,11 @@ const Comment = ({ comment, key }) => {
       {comment && comment.children && comment.children.length > 0 ? (
         <ul>
           {comment.children.map((childComment) => (
-            <Comment key={childComment.id} comment={childComment} />
+            <Comment
+              handleAddReply={handleAddReply}
+              key={childComment.id}
+              comment={childComment}
+            />
           ))}
         </ul>
       ) : null}
