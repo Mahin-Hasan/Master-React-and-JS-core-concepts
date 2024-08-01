@@ -11,7 +11,7 @@ const CountdownTimerTest = () => {
     return (
         <div className="countdown-timer-container">
             <h2>CountDown Timer</h2>
-            <CountdownTimer initialTime={600} onTimeFinish={handleTimeFinish} />
+            <CountdownTimer initialTime={900} onTimeFinish={handleTimeFinish} />
         </div>
     );
 };
