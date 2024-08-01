@@ -1,0 +1,64 @@
+.quiz {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  background-color: cornsilk;
+  padding: 25px;
+  border-radius: 8px;
+}
+.quiz h1 {
+  margin-bottom: 20px;
+  color: darkblue;
+}
+.quiz .options-wrapper p,.show-result-wrapper p {
+  font-size: larger;
+  font-weight: bold;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+.quiz .options-wrapper h2,
+.show-result-wrapper h2 {
+  margin-bottom: 15px;
+  color: darkblue;
+}
+
+.quiz .options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.quiz .options .option {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: none;
+  background-color: cadetblue;
+  color: bisque;
+  font-size: larger;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.quiz .options .selected {
+  background-color: rgb(28, 77, 79);
+  color: rgb(255, 255, 255);
+}
+.quiz .options-wrapper .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.quiz .options-wrapper .button-container button {
+  padding: 8px;
+  background-color: rgb(164, 255, 244);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  /* color: antiquewhite; */
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0;
+  border-radius: 6px;
+}

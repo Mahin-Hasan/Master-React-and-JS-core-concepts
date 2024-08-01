@@ -41,7 +41,7 @@
   color: crimson;
   font-weight: bold;
 }
-.form-validation-container button {
+.form-validation-container button,.restart-btn {
   padding: 8px;
   background-color: rgb(9, 110, 210);
   outline: none;
