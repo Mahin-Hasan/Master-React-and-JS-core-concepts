@@ -1,0 +1,9 @@
+.firebase-todo-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.firebase-todo-wrapper h2{
+    margin-top: 25px;
+}

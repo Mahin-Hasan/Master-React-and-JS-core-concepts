@@ -15,8 +15,9 @@ const PdfViewComponent = ({ productDetails }) => {
     <Document>
       <Page>
         <View>
-          <Text>{productDetails?.title}</Text>
-          <Text>{productDetails?.description}</Text>
+          <Text>Product Name: {productDetails?.title}</Text>
+          <Text>Info: {productDetails?.description}</Text>
+          <Text>Category: {productDetails?.category}</Text>
         </View>
       </Page>
     </Document>
@@ -49,7 +50,7 @@ const PdfViewer = () => {
     if (result) setProductDetails(result);
   }
 
-//   console.log(productDetails);
+  console.log(productDetails);
 
   return (
     <div className="pdf-viewer-container">
