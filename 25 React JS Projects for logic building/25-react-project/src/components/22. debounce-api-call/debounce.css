@@ -1,0 +1,29 @@
+.debounce-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.debounce-container h2{
+    margin-top: 20px;
+}
+.debounce-container input{
+    padding: 10px 20px;
+    outline: none;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid cadetblue;
+    margin-bottom: 20px;
+}
+.debounce-container ul{
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+}
+.debounce-container ul li{
+    padding: 10px;
+    background-color: darkseagreen;
+    border: 2px solid cadetblue;
+    border-radius: 8px;
+}
