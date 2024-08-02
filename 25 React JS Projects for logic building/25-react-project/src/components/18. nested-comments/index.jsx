@@ -66,7 +66,7 @@ const NestedComments = () => {
     }
   }
 
-  console.log(comments);
+  // console.log(comments);
   return (
     <div className="nested-comments-container">
       <h2>Nested Comments</h2>

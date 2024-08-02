@@ -1,0 +1,43 @@
+.pdf-viewer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.pdf-viewer-container h2 {
+  margin-top: 30px;
+}
+.pdf-viewer-container ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 80%;
+  margin: auto;
+}
+.pdf-viewer-container ul li {
+  padding: 20px;
+  background-color: bisque;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pdf-viewer-container ul li:hover {
+  background-color: burlywood;
+  transform: scale(1.05);
+}
+
+.pdf-viewer-container .pdf-download-btn {
+  padding: 6px;
+  background-color: rgb(9, 110, 210);
+  outline: none;
+  border: none;
+  font-size: 14px;
+  color: antiquewhite;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
