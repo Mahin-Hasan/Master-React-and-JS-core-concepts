@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useReducer, useState } from "react";
 import useDebounce from "../../22. debounce-api-call/use-debounce";
+import { Reducer } from "./Reducer";
+import { ADD_MOVIE_TO_WATCHED, ADD_MOVIE_TO_WATCHLIST } from "../types";
 
 export const MovieContext = createContext(null);
 const tmbd_api_key = import.meta.env.VITE_movieApiKey;
@@ -20,7 +22,7 @@ function GlobalState({ children }) {
   const [movieSearchResults, setMovieSearchResults] = useState([]);
 
   //using reducer
-  const [state, dispatch]= useReducer(Reducer, initialState)
+  const [state, dispatch] = useReducer(Reducer, initialState);
 
   const debouincedMovieSearchParamValue = useDebounce(searchMovieParam, 500);
   async function fetchListOfMovies() {
@@ -40,8 +42,26 @@ function GlobalState({ children }) {
     }
   }
   useEffect(() => {
-    fetchListOfMovies();
+    if (debouincedMovieSearchParamValue !== "") {
+      fetchListOfMovies();
+    }
   }, [debouincedMovieSearchParamValue]);
+
+  function handleAddMovieToWatchList(movie) {
+    // console.log(movie);
+    dispatch({
+      type: ADD_MOVIE_TO_WATCHLIST,
+      payload: movie,
+    });
+  }
+  console.log(state);
+  function handleAddMovieToWatched(movie) {
+    // console.log(movie);
+    dispatch({
+      type: ADD_MOVIE_TO_WATCHED,
+      payload: movie,
+    });
+  }
 
   return (
     <MovieContext.Provider
@@ -50,6 +70,9 @@ function GlobalState({ children }) {
         setSearchMovieParam,
         loading,
         movieSearchResults,
+        handleAddMovieToWatchList,
+        handleAddMovieToWatched,
+        state,
       }}
     >
       {children}

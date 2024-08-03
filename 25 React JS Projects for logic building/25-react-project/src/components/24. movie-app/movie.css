@@ -1,18 +1,18 @@
-.movie-app{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.movie-app {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.movie-app h2{
-    margin-top: 30px;
-    margin-bottom: 20px;
+.movie-app h2 {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
-.movie-app .movie-search-results-container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+.movie-app .movie-search-results-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
-.movie-app .movie-search-results-container .movie-card .fill-img{
+.movie-app .movie-search-results-container .movie-card .fill-img,.watch-list-wrapper .fill-img{
   width: 200px;
   height: 300px;
   background-color: cadetblue;
@@ -24,7 +24,12 @@
   font-weight: bold;
   text-decoration: underline;
 }
-.movie-app .watch-list-details-container{
-display: flex;
-justify-content: space-around;
+.movie-app .watch-list-details-container {
+  display: flex;
+  justify-content: space-around;
+}
+.movie-app .watch-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }

@@ -26,11 +26,13 @@ const MovieApp = () => {
       </div>
       {loading ? <h1>Fetching List of movies.....</h1> : null}
       <div className="movie-search-results-container">
-        {movieSearchResults && movieSearchResults.length > 0 && !loading
-          ? movieSearchResults.map((movieItem) => (
-              <MovieCard key={movieItem.id} movieItem={movieItem} />
-            ))
-          : null}
+        {movieSearchResults && movieSearchResults.length > 0 && !loading ? (
+          movieSearchResults.map((movieItem) => (
+            <MovieCard key={movieItem.id} movieItem={movieItem} />
+          ))
+        ) : (
+          <h3>Please Search to get result</h3>
+        )}
       </div>
     </div>
   );
