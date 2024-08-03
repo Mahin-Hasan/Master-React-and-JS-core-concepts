@@ -15,6 +15,7 @@ import FirebaseTodo from "./components/20. firebase-todo";
 import DebounceApiCall from "./components/22. debounce-api-call";
 import SortData from "./components/23. sort-data";
 import MovieApp from "./components/24. movie-app";
+import GoogleOAuthLogin from "./components/25. google-oauth-login";
 import CountdownTimerTest from "./components/3. countdown-timer/test";
 import StepProgressBarTest from "./components/4. step-progress-bar/test";
 import RandomQuoteGenerator from "./components/5. random-quote-generator";
@@ -51,6 +52,7 @@ function App() {
         <DebounceApiCall />
         <SortData/>
         <MovieApp/>
+        <GoogleOAuthLogin/>
       </div>
     </>
   );
