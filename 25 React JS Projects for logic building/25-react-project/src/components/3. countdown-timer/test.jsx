@@ -1,19 +1,21 @@
+import toast, { Toaster } from "react-hot-toast";
 import CountdownTimer from ".";
-import './timer.css'
-
+import "./timer.css";
 
 const CountdownTimerTest = () => {
-    const handleTimeFinish = () => {
-        alert("Times Up !!!")
-    }
+  const handleTimeFinish = () => {
+    toast("Times Up !!!", {
+      icon: "⏱️",
+    });
+  };
 
-
-    return (
-        <div className="countdown-timer-container">
-            <h2>CountDown Timer</h2>
-            <CountdownTimer initialTime={900} onTimeFinish={handleTimeFinish} />
-        </div>
-    );
+  return (
+    <div className="countdown-timer-container">
+      <h2>CountDown Timer</h2>
+      <Toaster/>
+      <CountdownTimer initialTime={300} onTimeFinish={handleTimeFinish} />
+    </div>
+  );
 };
 
 export default CountdownTimerTest;

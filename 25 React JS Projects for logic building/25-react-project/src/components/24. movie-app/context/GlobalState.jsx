@@ -1,16 +1,28 @@
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import useDebounce from "../../22. debounce-api-call/use-debounce";
 
 export const MovieContext = createContext(null);
+const tmbd_api_key = import.meta.env.VITE_movieApiKey;
+
+const initialState = {
+  watchList: localStorage.getItem("watchList")
+    ? JSON.parse(localStorage.getItem("watchList"))
+    : [],
+  watched: localStorage.getItem("watched")
+    ? JSON.parse(localStorage.getItem("watched"))
+    : [],
+};
 
 function GlobalState({ children }) {
   const [searchMovieParam, setSearchMovieParam] = useState("");
   const [loading, setLoading] = useState(false);
   const [movieSearchResults, setMovieSearchResults] = useState([]);
 
+  //using reducer
+  const [state, dispatch]= useReducer(Reducer, initialState)
+
   const debouincedMovieSearchParamValue = useDebounce(searchMovieParam, 500);
-  const tmbd_api_key = import.meta.env.VITE_movieApiKey;
   async function fetchListOfMovies() {
     try {
       setLoading(true);
