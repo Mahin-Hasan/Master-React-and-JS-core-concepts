@@ -50,7 +50,7 @@ const PdfViewer = () => {
     if (result) setProductDetails(result);
   }
 
-  console.log(productDetails);
+  // console.log(productDetails);
 
   return (
     <div className="pdf-viewer-container">

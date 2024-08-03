@@ -48,7 +48,7 @@ const DebounceApiCall = () => {
       {pending ? <h3>Pending ! Please Wait</h3> : null}
       <ul>
         {recipes && recipes.length > 0
-          ? recipes.map((recipeItem) => <li>{recipeItem.name}</li>)
+          ? recipes.map((recipeItem) => <li key={recipeItem.id}>{recipeItem.name}</li>)
           : <h3>No Recipies Found!! Please try different Recipie</h3>}
       </ul>
     </div>

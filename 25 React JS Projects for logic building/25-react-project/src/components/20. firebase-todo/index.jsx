@@ -46,7 +46,7 @@ const FirebaseTodo = () => {
     setInputValue("");
     setCurrentEditedTodoId(null);
   }
-  console.log(todos);
+  // console.log(todos);
 
   return (
     <div className="firebase-todo-wrapper">
