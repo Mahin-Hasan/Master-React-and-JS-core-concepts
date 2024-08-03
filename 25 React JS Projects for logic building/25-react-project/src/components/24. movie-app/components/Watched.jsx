@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { MovieContext } from "../context/GlobalState";
 
 const Watched = () => {
-    const { state } = useContext(MovieContext);
+  const { state, handleRemoveMovieFromWatched } = useContext(MovieContext);
 
-    return (
-        <div className="movie-watched">
-            <h2>Watched </h2>
-            <div className="watch-list-wrapper">
+  return (
+    <div className="movie-watched">
+      <h2>Watched </h2>
+      <div className="watched-wrapper">
         {state.watched && state.watched.length > 0 ? (
           state.watched.map((movieItem) => (
             <div className="movie-card" key={movieItem.id}>
@@ -26,8 +26,11 @@ const Watched = () => {
                 <h4>Original Title: {movieItem?.original_title}</h4>
               </div>
               <div className="button-wrapper">
-                <button>Remove From watched</button>
-                <button>Move to Watched</button>
+                <button
+                  onClick={() => handleRemoveMovieFromWatched(movieItem.id)}
+                >
+                  Remove From watched
+                </button>
               </div>
             </div>
           ))
@@ -35,8 +38,8 @@ const Watched = () => {
           <h1>No Movie Added in watched</h1>
         )}
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Watched;

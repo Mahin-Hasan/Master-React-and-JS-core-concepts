@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { MovieContext } from "../context/GlobalState";
 
 const Watchlist = () => {
-  const { state } = useContext(MovieContext);
+  const { state, handleRemoveMovieFromWatchList, handleMoveToWatched } =
+    useContext(MovieContext);
 
   return (
     <div className="movie-watchlist">
@@ -26,8 +27,14 @@ const Watchlist = () => {
                 <h4>Original Title: {movieItem?.original_title}</h4>
               </div>
               <div className="button-wrapper">
-                <button>Remove From Watchlist</button>
-                <button>Move to Watched</button>
+                <button
+                  onClick={() => handleRemoveMovieFromWatchList(movieItem.id)}
+                >
+                  Remove From Watchlist
+                </button>
+                <button onClick={() => handleMoveToWatched(movieItem)}>
+                  Move to Watched
+                </button>
               </div>
             </div>
           ))

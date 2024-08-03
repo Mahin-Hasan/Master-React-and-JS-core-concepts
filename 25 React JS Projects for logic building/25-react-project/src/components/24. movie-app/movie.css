@@ -12,7 +12,9 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-.movie-app .movie-search-results-container .movie-card .fill-img,.watch-list-wrapper .fill-img{
+.movie-app .movie-search-results-container .movie-card .fill-img,
+.watch-list-wrapper .fill-img,
+.watched-wrapper .fill-img {
   width: 200px;
   height: 300px;
   background-color: cadetblue;
@@ -28,8 +30,17 @@
   display: flex;
   justify-content: space-around;
 }
-.movie-app .watch-list-wrapper {
+.movie-app .watch-list-wrapper,
+.movie-app .watched-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+.movie-app input {
+  padding: 10px 20px;
+  outline: none;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 2px solid cadetblue;
+  margin-bottom: 20px;
 }

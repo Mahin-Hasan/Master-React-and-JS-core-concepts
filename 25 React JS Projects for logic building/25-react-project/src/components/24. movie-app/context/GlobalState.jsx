@@ -2,7 +2,13 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import useDebounce from "../../22. debounce-api-call/use-debounce";
 import { Reducer } from "./Reducer";
-import { ADD_MOVIE_TO_WATCHED, ADD_MOVIE_TO_WATCHLIST } from "../types";
+import {
+  ADD_MOVIE_TO_WATCHED,
+  ADD_MOVIE_TO_WATCHLIST,
+  MOVE_TO_WATCHED,
+  REMOVE_MOVIE_FROM_WATCHED,
+  REMOVE_MOVIE_FROM_WATCHLIST,
+} from "../types";
 
 export const MovieContext = createContext(null);
 const tmbd_api_key = import.meta.env.VITE_movieApiKey;
@@ -46,6 +52,10 @@ function GlobalState({ children }) {
       fetchListOfMovies();
     }
   }, [debouincedMovieSearchParamValue]);
+  useEffect(() => {
+    localStorage.setItem("watchList", JSON.stringify(state.watchList));
+    localStorage.setItem("watched", JSON.stringify(state.watched));
+  }, [state]);
 
   function handleAddMovieToWatchList(movie) {
     // console.log(movie);
@@ -54,11 +64,28 @@ function GlobalState({ children }) {
       payload: movie,
     });
   }
-  console.log(state);
   function handleAddMovieToWatched(movie) {
     // console.log(movie);
     dispatch({
       type: ADD_MOVIE_TO_WATCHED,
+      payload: movie,
+    });
+  }
+  function handleRemoveMovieFromWatchList(id) {
+    dispatch({
+      type: REMOVE_MOVIE_FROM_WATCHLIST,
+      payload: id,
+    });
+  }
+  function handleRemoveMovieFromWatched(id) {
+    dispatch({
+      type: REMOVE_MOVIE_FROM_WATCHED,
+      payload: id,
+    });
+  }
+  function handleMoveToWatched(movie) {
+    dispatch({
+      type: MOVE_TO_WATCHED,
       payload: movie,
     });
   }
@@ -72,6 +99,9 @@ function GlobalState({ children }) {
         movieSearchResults,
         handleAddMovieToWatchList,
         handleAddMovieToWatched,
+        handleRemoveMovieFromWatchList,
+        handleRemoveMovieFromWatched,
+        handleMoveToWatched,
         state,
       }}
     >
