@@ -15,11 +15,12 @@
     margin-bottom: 20px;
 }
 .debounce-container ul{
-    display: grid;
-    flex-direction: column;
+    display: flex;
     align-items: center;
     list-style: none;
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .debounce-container ul li{
     padding: 10px;
